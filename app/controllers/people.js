@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { service } from '@ember/service';
 
-export default class PersonsController extends Controller {
+export default class PeopleController extends Controller {
   @tracked newName = '';
 
   @service store;
@@ -12,7 +12,7 @@ export default class PersonsController extends Controller {
   createPerson(event) {
     event.preventDefault();
     // create the new person
-    const person = this.store.createRecord('persons', {
+    const person = this.store.createRecord('person', {
       name: this.newName,
     });
     person.save();
