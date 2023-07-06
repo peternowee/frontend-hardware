@@ -1,2 +1,31 @@
 {{page-title "IndividualProducts"}}
+
+<ul>
+  {{#each @model as |individualProduct|}}
+    <li>
+      {{individualProduct.serialNumber}}
+      {{individualProduct.name}}
+      <small>{{individualProduct.id}}</small>
+      <button type="button" {{on "click" (fn this.removeIndividualProduct individualProduct)}}>Remove</button>
+    </li>
+  {{/each}}
+</ul>
+
+<hr />
+<form {{on "submit" this.createIndividualProduct}} >
+  <dl>
+    <dt>Serial number</dt>
+    <dd>
+       <Input @value={{this.newSerialNumber}}
+              placeholder="1234567890" />
+    </dd>
+    <dt>Name</dt>
+    <dd>
+       <Input @value={{this.newName}}
+              placeholder="Frontier OLCF-5" />
+    </dd>
+  </dl>
+  <button type="submit">Create</button>
+</form>
+
 {{outlet}}
