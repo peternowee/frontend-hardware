@@ -11,6 +11,12 @@
           {{transaction.newOwner.id}}<br />
           {{transaction.newOwner.name}}
         </li>
+        <li>Received product:<br />
+          {{transaction.receivedProduct}}<br />
+          {{transaction.receivedProduct.id}}<br />
+          {{transaction.receivedProduct.serialNumber}}<br />
+          {{transaction.receivedProduct.name}}
+        </li>
       </ul>
       <button type="button" {{on "click" (fn this.removeTransaction transaction)}}>Remove</button>
     </li>
@@ -29,6 +35,11 @@
     <dd>
        <Input @value={{this.newOwner}}
               placeholder="64A68A6AB3020C92BA8D9DE4" />
+    </dd>
+    <dt>Received product ID</dt>
+    <dd>
+       <Input @value={{this.receivedProduct}}
+              placeholder="64A8036EDDF042E61F69B2C4" />
     </dd>
   </dl>
   <button type="submit">Create</button>

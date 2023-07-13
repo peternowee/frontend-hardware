@@ -6,6 +6,7 @@ import { service } from '@ember/service';
 export default class TransactionsController extends Controller {
   @tracked newTransactionDatetime = '';
   @tracked newOwner = '';
+  @tracked receivedProduct = '';
 
   @service store;
 
@@ -16,15 +17,20 @@ export default class TransactionsController extends Controller {
     // look up related records
     this.store.findRecord('person', this.newOwner, {reload: true})
     .then(function(myPerson) {
-      // create the new transaction
-      const transaction = route.store.createRecord('transaction', {
-        datetime: new Date(route.newTransactionDatetime),
-        newOwner: myPerson,
-      });
-      transaction.save()
-      // clear the input fields
-      route.newTransactionDatetime = '';
-      route.newOwner = '';
+      route.store.findRecord('individual-product', route.receivedProduct, {reload: true})
+      .then(function(myIndividualProduct) {
+        // create the new transaction
+        const transaction = route.store.createRecord('transaction', {
+          datetime: new Date(route.newTransactionDatetime),
+          newOwner: myPerson,
+          receivedProduct: myIndividualProduct,
+        });
+        transaction.save()
+        // clear the input fields
+        route.newTransactionDatetime = '';
+        route.newOwner = '';
+        route.receivedProduct = '';
+      })
     }).catch(function(error){
         console.log(error.message);
     });

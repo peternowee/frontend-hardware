@@ -3,9 +3,9 @@
 <ul>
   {{#each @model as |individualProduct|}}
     <li>
-      {{individualProduct.serialNumber}}
-      {{individualProduct.name}}
-      <small>{{individualProduct.id}}</small>
+      Serial number: {{individualProduct.serialNumber}}<br />
+      Product name: {{individualProduct.name}}<br />
+      ID: <small>{{individualProduct.id}}</small>
       <button type="button" {{on "click" (fn this.removeIndividualProduct individualProduct)}}>Remove</button>
     </li>
   {{/each}}
