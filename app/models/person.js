@@ -1,5 +1,6 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, hasMany } from '@ember-data/model';
 
 export default class PersonModel extends Model {
   @attr('string') name;
+  @hasMany('transaction', { async: true, inverse: 'person' }) transaction;
 }

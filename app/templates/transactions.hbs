@@ -3,10 +3,14 @@
 <ul>
   {{#each @model as |transaction|}}
     <li>
-      {{transaction.datetime}}<br />
-      {{transaction.person}}<br />
-      {{transaction.individualProduct}}<br />
-      <small>{{transaction.id}}</small>
+      <small>Transaction ID: {{transaction.id}}</small><br />
+      <ul>
+        <li>New owner:<br />
+          {{transaction.newOwner}}<br />
+          {{transaction.newOwner.id}}<br />
+          {{transaction.newOwner.name}}
+        </li>
+      </ul>
       <button type="button" {{on "click" (fn this.removeTransaction transaction)}}>Remove</button>
     </li>
   {{/each}}
@@ -15,20 +19,10 @@
 <hr />
 <form {{on "submit" this.createTransaction}} >
   <dl>
-    <dt>Datetime</dt>
+    <dt>New owner ID</dt>
     <dd>
-       <Input @value={{this.newDatetime}}
-              placeholder="20230101T0000Z" />
-    </dd>
-    <dt>Person ID</dt>
-    <dd>
-       <Input @value={{this.newPerson}}
+       <Input @value={{this.newOwner}}
               placeholder="64A68A6AB3020C92BA8D9DE4" />
-    </dd>
-    <dt>Individual Product ID</dt>
-    <dd>
-       <Input @value={{this.newIndividualProduct}}
-              placeholder="64A6DB1A5C9291BE71355640" />
     </dd>
   </dl>
   <button type="submit">Create</button>

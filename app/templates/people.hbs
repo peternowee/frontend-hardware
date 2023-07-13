@@ -1,11 +1,9 @@
 {{page-title "People"}}
 
-<p>Hello from people.hbs</p>
-
 <ul>
   {{#each @model as |person|}}
     <li>
-      {{person.name}}<small>{{person.name}}</small>
+      {{person.name}} <small>{{person.id}}</small>
       <button type="button" {{on "click" (fn this.removePerson person)}}>Remove</button>
     </li>
   {{/each}}

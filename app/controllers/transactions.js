@@ -4,26 +4,27 @@ import { tracked } from '@glimmer/tracking';
 import { service } from '@ember/service';
 
 export default class TransactionsController extends Controller {
-  @tracked newDatetime = '';
-  @tracked newPerson = '';
-  @tracked newIndividualProduct = '';
+  @tracked newOwner = '';
 
   @service store;
 
   @action
   createTransaction(event) {
     event.preventDefault();
-    // create the new transaction
-    const transaction = this.store.createRecord('transaction', {
-      datetime: new Date(this.newDatetime),
-      person: this.newPerson,
-      individualProduct: this.newIndividualProduct,
+    var route = this;
+    // look up related records
+    this.store.findRecord('person', this.newOwner, {reload: true})
+    .then(function(myPerson) {
+      // create the new transaction
+      const transaction = route.store.createRecord('transaction', {
+        newOwner: myPerson,
+      });
+      transaction.save()
+    }).catch(function(error){
+        console.log(error.message);
     });
-    transaction.save();
     // clear the input fields
-    this.newDatetime = '';
-    this.newPerson = '';
-    this.newIndividualProduct = '';
+    this.newOwner = '';
   }
 
   @action
