@@ -20,11 +20,11 @@ export default class TransactionsController extends Controller {
         newOwner: myPerson,
       });
       transaction.save()
+      // clear the input fields
+      route.newOwner = '';
     }).catch(function(error){
         console.log(error.message);
     });
-    // clear the input fields
-    this.newOwner = '';
   }
 
   @action
