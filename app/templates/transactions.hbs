@@ -5,6 +5,7 @@
     <li>
       <small>Transaction ID: {{transaction.id}}</small><br />
       <ul>
+        <li>Datetime: {{transaction.datetime}}</li>
         <li>New owner:<br />
           {{transaction.newOwner}}<br />
           {{transaction.newOwner.id}}<br />
@@ -19,6 +20,11 @@
 <hr />
 <form {{on "submit" this.createTransaction}} >
   <dl>
+    <dt>Date and time</dt>
+    <dd>
+       <Input @value={{this.newTransactionDatetime}}
+              placeholder="20230101T0000Z" />
+    </dd>
     <dt>New owner ID</dt>
     <dd>
        <Input @value={{this.newOwner}}
