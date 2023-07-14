@@ -6,7 +6,7 @@ export default class TransactionsRoute extends Route {
 
   model() {
     return this.store.findAll('transaction', {
-      include: 'new-owner,received-product'
+      include: 'new-owner,received-product',
     });
   }
 }
