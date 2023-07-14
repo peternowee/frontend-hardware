@@ -26,20 +26,35 @@
 <hr />
 <form {{on "submit" this.createTransaction}} >
   <dl>
-    <dt>Date and time</dt>
+    <dt><label for="transaction-datetime">
+      Date and time
+    </label></dt>
     <dd>
-       <Input @value={{this.newTransactionDatetime}}
-              placeholder="2023-01-01 00:00" />
+      <Input
+        id="transaction-datetime"
+        @value={{this.newTransactionDatetime}}
+        placeholder="2023-01-01 00:00"
+      />
     </dd>
-    <dt>New owner ID</dt>
+    <dt><label for="transaction-new-owner">
+      New owner ID
+    </label></dt>
     <dd>
-       <Input @value={{this.newOwner}}
-              placeholder="64A68A6AB3020C92BA8D9DE4" />
+      <Input
+        id="transaction-new-owner"
+        @value={{this.newOwner}}
+        placeholder="64A68A6AB3020C92BA8D9DE4"
+      />
     </dd>
-    <dt>Received product ID</dt>
+    <dt><label for="transaction-received-product">
+      Received product ID
+    </label></dt>
     <dd>
-       <Input @value={{this.receivedProduct}}
-              placeholder="64A8036EDDF042E61F69B2C4" />
+      <Input
+        id="transaction-received-product"
+        @value={{this.receivedProduct}}
+        placeholder="64A8036EDDF042E61F69B2C4"
+      />
     </dd>
   </dl>
   <button type="submit">Create</button>

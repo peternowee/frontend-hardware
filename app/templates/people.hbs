@@ -12,10 +12,15 @@
 <hr />
 <form {{on "submit" this.createPerson}} >
   <dl>
-    <dt>Person name</dt>
+    <dt><label for="person-name">
+      Person name
+    </label></dt>
     <dd>
-       <Input @value={{this.newName}}
-              placeholder="Grace" />
+      <Input
+        id="person-name"
+        @value={{this.newName}}
+        placeholder="Grace"
+      />
     </dd>
   </dl>
   <button type="submit">Create</button>

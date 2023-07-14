@@ -14,15 +14,25 @@
 <hr />
 <form {{on "submit" this.createIndividualProduct}} >
   <dl>
-    <dt>Serial number</dt>
+    <dt><label for="individual-product-serial-number">
+      Serial number
+    </label></dt>
     <dd>
-       <Input @value={{this.newSerialNumber}}
-              placeholder="1234567890" />
+      <Input
+        id="individual-product-serial-number"
+        @value={{this.newSerialNumber}}
+        placeholder="1234567890"
+      />
     </dd>
-    <dt>Name</dt>
+    <dt><label for="individual-product-name">
+      Name
+    </label></dt>
     <dd>
-       <Input @value={{this.newName}}
-              placeholder="Frontier OLCF-5" />
+      <Input
+        id="individual-product-name"
+        @value={{this.newName}}
+        placeholder="Frontier OLCF-5"
+      />
     </dd>
   </dl>
   <button type="submit">Create</button>
