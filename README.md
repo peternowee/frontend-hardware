@@ -1,7 +1,11 @@
-# hw-ember
+# frontend-hardware
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Demo-app for keeping track of which people possess which pieces of
+hardware.
+
+This repository `frontend-hardware` contains the frontend.
+
+The backend can be found in repository `app-hardware`.
 
 ## Prerequisites
 
@@ -10,17 +14,18 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://cli.emberjs.com/release/)
-* [Google Chrome](https://google.com/chrome/)
+* Web browser
 
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd hw-ember`
+* `cd frontend-hardware`
 * `npm install`
 
 ## Running / Development
 
-* `ember serve`
+* `ember serve --proxy http://localhost` (assuming the backend is
+  serving at `http://localhost`).
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
