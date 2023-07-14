@@ -1,11 +1,11 @@
 {
-  "name": "hw-ember",
+  "name": "frontend-hardware",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for hw-ember goes here",
+  "description": "Frontend of demo-app Hardware",
   "repository": "",
   "license": "MIT",
-  "author": "",
+  "author": "Peter Nowee",
   "directories": {
     "doc": "doc",
     "test": "tests"

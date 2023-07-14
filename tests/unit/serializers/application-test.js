@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 
-import { setupTest } from 'hw-ember/tests/helpers';
+import { setupTest } from 'frontend-hardware/tests/helpers';
 
 module('Unit | Serializer | application', function (hooks) {
   setupTest(hooks);
