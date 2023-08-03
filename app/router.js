@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('people');
   this.route('individual-products');
   this.route('transactions');
+  this.route('count');
 });
