@@ -7,15 +7,12 @@
       <ul>
         <li>Datetime: {{transaction.datetime}}</li>
         <li>New owner:<br />
-          {{transaction.newOwner}}<br />
-          {{transaction.newOwner.id}}<br />
-          {{transaction.newOwner.name}}
-        </li>
+          {{transaction.newOwner.name}} <small>{{transaction.newOwner.id}}</small>
+          </li>
         <li>Received product:<br />
-          {{transaction.receivedProduct}}<br />
-          {{transaction.receivedProduct.id}}<br />
-          {{transaction.receivedProduct.serialNumber}}<br />
-          {{transaction.receivedProduct.name}}
+          Serial number: {{transaction.receivedProduct.serialNumber}}<br />
+          Product name: {{transaction.receivedProduct.name}}<br />
+          ID: <small>{{transaction.receivedProduct.id}}</small>
         </li>
       </ul>
       <button type="button" {{on "click" (fn this.removeTransaction transaction)}}>Remove</button>
