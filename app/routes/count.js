@@ -6,7 +6,7 @@ export default class CountRoute extends Route {
   async model() {
     let response = await fetch('/count');
     let json = await response.json();
-    return json.results.bindings[0]["callret-0"]["value"];
+    return json.results.bindings[0]["triples"]["value"];
   }
 
 }
