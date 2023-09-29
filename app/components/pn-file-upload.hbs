@@ -1,1 +1,11 @@
-{{yield}}
+{{#let (file-queue name="photos" onFileAdded=this.uploadPhoto) as |queue|}}
+  <div>
+    Files in queue: {{queue.files.length}}
+  </div>
+  <div>
+    <label>
+      Choose a photo
+      <input type="file" {{queue.selectFile}}>
+    </label>
+  </div>
+{{/let}}
