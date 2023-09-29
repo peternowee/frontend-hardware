@@ -1,0 +1,31 @@
+{{page-title "Files"}}
+
+<ul>
+  {{#each @model as |file|}}
+    <li>
+      {{file.name}} <small>{{file.id}}</small>
+      <button type="button" {{on "click" (fn this.removeFile file)}}>Remove</button>
+    </li>
+  {{/each}}
+</ul>
+
+<PnFileUpload />
+
+<hr />
+<form {{on "submit" this.createFile}} >
+  <dl>
+    <dt><label for="file-name">
+      Name
+    </label></dt>
+    <dd>
+      <Input
+        id="file-name"
+        @value={{this.newName}}
+        placeholder="my-file.txt"
+      />
+    </dd>
+  </dl>
+  <button type="submit">Create</button>
+</form>
+
+{{outlet}}
