@@ -3,7 +3,10 @@
 <ul>
   {{#each @model as |file|}}
     <li>
-      {{file.name}} <small>{{file.id}}</small>
+      <small>File ID: <a href={{file.downloadLink}} download>{{file.id}}</a></small><br />
+      <ul>
+        <li><a href={{file.namedDownloadLink}} download>{{file.name}}</a></li>
+      </ul>
       <button type="button" {{on "click" (fn this.removeFile file)}}>Remove</button>
     </li>
   {{/each}}

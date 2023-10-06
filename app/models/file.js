@@ -15,7 +15,7 @@ export default class FileModel extends Model {
   download;
 
   get downloadLink() {
-    return `/files/${this.id}/download`;
+    return `http://localhost/files/${this.id}/download`;
   }
 
   get namedDownloadLink() {
