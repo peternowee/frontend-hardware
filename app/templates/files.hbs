@@ -11,21 +11,4 @@
 
 <PnFileUpload />
 
-<hr />
-<form {{on "submit" this.createFile}} >
-  <dl>
-    <dt><label for="file-name">
-      Name
-    </label></dt>
-    <dd>
-      <Input
-        id="file-name"
-        @value={{this.newName}}
-        placeholder="my-file.txt"
-      />
-    </dd>
-  </dl>
-  <button type="submit">Create</button>
-</form>
-
 {{outlet}}
