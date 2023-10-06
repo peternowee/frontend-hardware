@@ -2,13 +2,16 @@
 
 <ul>
   {{#each @model as |file|}}
+  {{#if file.download.id}}
     <li>
-      <small>File ID: <a href={{file.downloadLink}} download>{{file.id}}</a></small><br />
+      <small>Virtual file ID: <a href={{file.downloadLink}} download>{{file.id}}</a></small><br />
       <ul>
         <li><a href={{file.namedDownloadLink}} download>{{file.name}}</a></li>
+        <li>Physical file ID: {{file.download.id}}</li>
       </ul>
       <button type="button" {{on "click" (fn this.removeFile file)}}>Remove</button>
     </li>
+  {{/if}}
   {{/each}}
 </ul>
 
